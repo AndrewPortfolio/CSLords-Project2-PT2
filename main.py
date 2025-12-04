@@ -31,7 +31,7 @@ if __name__ == "__main__":
     accuracy = validator.evaluate(s_dataset, classifier, feature_subset)
     end = time.time()
 
-    print(f"Accuracy using features {feature_subset}: {round(accuracy*100,2)}% -- took {round(end-start, 5)}seconds")
+    print(f"Accuracy using features [3, 5, 7]: {round(accuracy*100,2)}% -- took {round(end-start, 5)}seconds")
 
     # test large dataset
     l_dataset = load_dataset("data/large-test-dataset-2.txt")
@@ -42,4 +42,4 @@ if __name__ == "__main__":
     accuracy = validator.evaluate(l_dataset, classifier, feature_subset)
     end = time.time()
 
-    print(f"Accuracy using features {feature_subset}: {round(accuracy*100,2)}% -- took {round(end-start, 5)}seconds")
+    print(f"Accuracy using features [1, 15, 27]: {round(accuracy*100,2)}% -- took {round(end-start, 5)}seconds")
