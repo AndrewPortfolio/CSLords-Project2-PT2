@@ -43,3 +43,22 @@ if __name__ == "__main__":
     end = time.time()
 
     print(f"Accuracy using features {feature_subset}: {accuracy*100:.2f}% -- took {round(end-start, 5)}seconds")
+
+
+    # ADDED TWO RANDOM TEST CASES TO SEE HOW IT WORKS!!
+
+    #using [5, 20, 31] but since index starts from 0, it is rather [4, 19, 30]
+    feature_subset = [4, 19, 30]
+    start = time.time()
+    accuracy = validator.evaluate(l_dataset, classifier, feature_subset)
+    end = time.time()
+
+    print(f"Accuracy using features {feature_subset}: {accuracy*100:.2f}% -- took {round(end-start, 5)}seconds")
+    
+    #using [10, 25, 36] but since index starts from 0, it is rather [9, 24, 35]
+    feature_subset = [9, 24, 35]
+    start = time.time()
+    accuracy = validator.evaluate(l_dataset, classifier, feature_subset)
+    end = time.time()
+
+    print(f"Accuracy using features {feature_subset}: {accuracy*100:.2f}% -- took {round(end-start, 5)}seconds")
