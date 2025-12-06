@@ -66,6 +66,7 @@ if __name__ == "__main__":
     validator = Validator()
 
     # using [3, 5, 7] but since index starts from 0, it is rather [2,4,6]
+    print("\nGetting Accuracy for SMALL DATASET (w/o normalization)")
     feature_subset = [2, 4, 6]
     start = time.time()
     accuracy = validator.evaluate(s_dataset, classifier, feature_subset)
@@ -77,6 +78,7 @@ if __name__ == "__main__":
     l_dataset = load_dataset("data/large-test-dataset-2.txt")
 
     #using [1, 15, 27] but since index starts from 0, it is rather [0, 14, 26]
+    print("\nGetting Accuracy for LARGE DATASET (w/o normalization)")
     feature_subset = [0, 14, 26]
     start = time.time()
     accuracy = validator.evaluate(l_dataset, classifier, feature_subset)
@@ -91,18 +93,21 @@ if __name__ == "__main__":
     l_dataset = normalize(l_dataset)
     print("Done!")
 
+    print("\nGetting Accuracy for SMALL DATASET (w/ normalization)")
     feature_subset = [2, 4, 6]
     start = time.time()
     accuracy = validator.evaluate(s_dataset, classifier, feature_subset)
     end = time.time()
     print(f"Accuracy using features [3, 5, 7]: {round(accuracy*100,2)}% -- took {round(end-start, 5)}seconds")
 
+    print("\nGetting Accuracy for LARGE DATASET (w/ normalization)")
     feature_subset = [0, 14, 26]
     start = time.time()
     accuracy = validator.evaluate(l_dataset, classifier, feature_subset)
     end = time.time()
 
     print(f"Accuracy using features [1, 15, 27]: {round(accuracy*100,2)}% -- took {round(end-start, 5)}seconds")
+    print("\n")
 
 
 
